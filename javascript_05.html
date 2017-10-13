@@ -1,13 +1,41 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-	<script type="text/javascript">
-	var a="�ڹٽ�ũ��Ʈ";
-	var b="���α׷���";
-	var sum = a+b;
-	console.log(sum);
-	</script>
+    <script type="text/javascript">
+    console.log = function(msg) {
+        var ul = document.getElementById("log");
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(msg));
+        ul.appendChild(li);
+    }
+
+    window.onload = function() {
+        document.getElementById("run").onclick = function() {
+            //
+            // 기존 자바스크립트 코드를 이쪽으로 옮김.
+            //
+    var a = "자바스크립트";
+    var b = "프로그래밍";
+    var sum = a + b;
+    console.log(sum);
+        }
+    }
+    </script>
 </head>
 <body>
+    <div>
+        <textarea cols = "100" rows="40">
+    var a = "자바스크립트";
+    var b = "프로그래밍";
+    var sum = a + b;
+    document.write(sum);
+        </textarea>
+    </div>
+    <div>
+        <input type="button" id="run" value="실행"/>
+    </div>
+    <div>
+        <ul id="log" style="list-style-type:circle"></ul>
+    </div>    
 </body>
 </html>
